@@ -15,8 +15,9 @@ export default {
   data () {
     return {
       images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg'
+        'https://h2a.appsimg.com/a.appsimg.com/upload/flow/2020/04/28/178/15880665936626.jpg!85.webp',
+        'https://h2a.appsimg.com/a.appsimg.com/upload/flow/2020/04/29/120/15881289279348.jpg!85.webp',
+        'https://h2a.appsimg.com/a.appsimg.com/upload/flow/2020/04/29/15/15881409300317.jpg!85.webp'
       ]
     }
   },
@@ -30,6 +31,9 @@ export default {
 <style lang="less" scoped>
 </style>
 <style lang="less">
+.wheelPlanting{
+  margin-top: 52px;
+}
  .my-swipe .van-swipe-item {
     color: #fff;
     font-size: 20px;
