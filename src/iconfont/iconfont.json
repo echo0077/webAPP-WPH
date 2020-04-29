@@ -1,0 +1,79 @@
+{
+  "id": "1789647",
+  "name": "liu APP",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5218776",
+      "name": "洗护用品",
+      "font_class": "xihuyongpin",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "797053",
+      "name": "购物",
+      "font_class": "gouwu",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "9359",
+      "name": "家具",
+      "font_class": "jiaju",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1366138",
+      "name": "房子2",
+      "font_class": "building_",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "4751849",
+      "name": "母婴",
+      "font_class": "muying",
+      "unicode": "e7e4",
+      "unicode_decimal": 59364
+    },
+    {
+      "icon_id": "10941886",
+      "name": "食品",
+      "font_class": "shipin",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "13548146",
+      "name": "服饰-12",
+      "font_class": "fushi-",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "14343502",
+      "name": "angellist",
+      "font_class": "angellist",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "14356101",
+      "name": "组 5889",
+      "font_class": "zu5889",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "720869",
+      "name": "鞋包配饰",
+      "font_class": "xiebaopeishizhuanhuan",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    }
+  ]
+}
