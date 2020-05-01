@@ -1,8 +1,8 @@
 <template>
   <div class="wheelPlanting">
     <van-swipe :autoplay="3000">
-        <van-swipe-item v-for="(image, index) in images" :key="index">
-    <img  style="width:100%;height:200px;" v-lazy="image" />
+      <van-swipe-item v-for="(image, index) in images" :key="index">
+      <img style="width:100%;height:200px;"  :src="image" />
   </van-swipe-item>
 </van-swipe>
   </div>
@@ -31,13 +31,16 @@ export default {
 <style lang="less" scoped>
 </style>
 <style lang="less">
-.wheelPlanting{
-  margin-top: 52px;
-}
+  .wheelPlanting{
+    margin-top: 52px;
+  }
  .my-swipe .van-swipe-item {
     color: #fff;
     font-size: 20px;
     text-align: center;
     width: 100%;
+  }
+  .van-swipe{
+    transform: translateZ(0);
   }
 </style>
