@@ -24,7 +24,7 @@ export default {
     return {
     }
   },
-  components: {wheelPlanting,Search,Tabbar,Grid,goodCard},
+  components: {wheelPlanting, Search, Tabbar, Grid, goodCard},
   methods: {
   },
   created () {

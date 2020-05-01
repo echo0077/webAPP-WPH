@@ -13,7 +13,7 @@ import Promise from 'es6-promise'
 // 导入全局样式初始化文件
 import '@/assets/css/Initial.css'
 
-//引入阿里图库 iconfont.css
+// 引入阿里图库 iconfont.css
 import '@/iconfont/iconfont.css'
 
 // 引入vant-UI 库

@@ -12,13 +12,13 @@
 
 <script>
 export default {
-    data() {
+  data () {
     return {
-      active: 0,
-    };
+      active: 0
+    }
   },
   methods: {
-  },
+  }
 }
 </script>
 <style scoped>

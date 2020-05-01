@@ -10,44 +10,44 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            iconList:[
-                {
-                    name:'xiebaopeishizhuanhuan',
-                    text:'鞋包'
-                },
-                {
-                    name:'jiaju',
-                    text:'家具'
-                },
-                {
-                    name:'muying',
-                    text:'母婴'
-                },
-                {
-                    name:'shipin',
-                    text:'食品'
-                },
-                {
-                    name:'fushi-',
-                    text:'服饰'
-                },
-                {
-                    name:'xihuyongpin',
-                    text:'洗护'
-                },
-                {
-                    name:'angellist',
-                    text:'颜值货'
-                },
-                {
-                    name:'building_',
-                    text:'直达专柜'
-                }
-            ]
+  data () {
+    return {
+      iconList: [
+        {
+          name: 'xiebaopeishizhuanhuan',
+          text: '鞋包'
+        },
+        {
+          name: 'jiaju',
+          text: '家具'
+        },
+        {
+          name: 'muying',
+          text: '母婴'
+        },
+        {
+          name: 'shipin',
+          text: '食品'
+        },
+        {
+          name: 'fushi-',
+          text: '服饰'
+        },
+        {
+          name: 'xihuyongpin',
+          text: '洗护'
+        },
+        {
+          name: 'angellist',
+          text: '颜值货'
+        },
+        {
+          name: 'building_',
+          text: '直达专柜'
         }
-    },
+      ]
+    }
+  }
 }
 </script>
 <style scoped>

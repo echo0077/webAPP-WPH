@@ -8,6 +8,6 @@
 import Title from '@/components/titile.vue'
 import Tabbar from '@/components/tabbar'
 export default {
-   components: {Title,Tabbar}, 
+  components: {Title, Tabbar}
 }
 </script>

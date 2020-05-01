@@ -8,11 +8,11 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            value:''
-        }
-    },
+  data () {
+    return {
+      value: ''
+    }
+  }
 }
 </script>
 <style scoped>
