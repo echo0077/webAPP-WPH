@@ -50,9 +50,10 @@ export default {
       console.log('submit', values)
     },
     close () {
-      this.$router.push({
-        name: 'Mine'
-      })
+      // this.$router.push({
+      //   name: 'Mine'
+      // })
+      this.$router.push('/Mine')
     }
   }
 }
