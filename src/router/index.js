@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 // 导入路由组件
 import Home from '@/pages/Home/index.vue'
+import SignIn from '@/pages/SignIn/index.vue'
 import List from '@/pages/List/index.vue'
 import Cart from '@/pages/Cart/index.vue'
 import Mine from '@/pages/Mine/index.vue'
@@ -15,6 +16,7 @@ let router = new Router({
   routes: [
     { path: '/', redirect: '/Home' }, // 首页
     { path: '/Home', name: 'Home', component: Home }, // 首页
+    { path: '/SignIn', name: 'SignIn', component: SignIn }, // 登录
     { path: '/List', name: 'List', component: List }, // 分类页
     { path: '/Cart', name: 'Cart', component: Cart }, // 购物车
     { path: '/Mine', name: 'Mine', component: Mine } // 购物车

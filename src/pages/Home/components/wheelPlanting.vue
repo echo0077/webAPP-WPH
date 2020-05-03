@@ -28,8 +28,6 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-</style>
 <style lang="less">
   .wheelPlanting{
     margin-top: 52px;

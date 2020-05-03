@@ -2,8 +2,10 @@
     <div>
         <van-grid :column-num="3">
             <van-grid-item v-for="(item,index) in gridList" :key="index">
-                <van-image :src="item.imgUrl" />
+                <van-image :src="item.imgUrl">
+                <template v-slot:error>加载失败</template>
                 <span>{{item.text}}</span>
+                </van-image>
             </van-grid-item>
         </van-grid>
     </div>
@@ -63,6 +65,10 @@ export default {
         // bottom: 10px;
         // color: rgb(254, 64, 112);
         font-size: 14px;
+    }
+    .van-image__img {
+        width: 90%;
+        height: 90%;
     }
 }
 </style>
