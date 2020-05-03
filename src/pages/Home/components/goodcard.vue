@@ -22,7 +22,7 @@
         <div class="center_img">
             <img v-for="(item,index) in imgList" :key="index" :src="item" alt="">
         </div>
-        <van-grid :column-num="3" :gutter="10" square >
+        <van-grid :column-num="3" :gutter="10"  >
             <van-grid-item v-for="(item,index) in gridList" :key="index">
                 <van-image :src="item.imgUrl" />
                 <span>{{item.text}}</span>
@@ -107,11 +107,9 @@ export default {
     height: 180px;
     margin-top:10px
 }
-.van-grid-item__content{
+/deep/.van-grid-item__content{
+    padding-bottom: 8px;
     span{
-        position: absolute;
-        bottom: 10px;
-        color: rgb(254, 64, 112);
         font-size: 14px;
     }
 }

@@ -20,12 +20,16 @@ export default {
   },
   created () {
     let path = this.$route.path
-    if (path === '/List') {
-      this.getTitle = '分类'
-    } else if (path === '/Cart') {
-      this.getTitle = '购物车'
-    } else if (path === '/Mine') {
-      this.getTitle = '个人中心'
+    switch (path) {
+      case '/List':
+        this.getTitle = '分类'
+        break
+      case '/Cart':
+        this.getTitle = '购物车'
+        break
+      case '/Mine':
+        this.getTitle = '个人中心'
+        break
     }
   },
   methods: {
