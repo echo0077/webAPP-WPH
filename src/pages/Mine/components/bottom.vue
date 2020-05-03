@@ -17,8 +17,7 @@
             <van-cell icon="friends" title="联系人" size="large" is-link value="编辑" to="/Contacts"/>
         </van-cell-group>
         <van-cell-group class="order">
-            <van-cell icon="hot" title="热卖商品" size="large" is-link />
-            <van-cell icon="setting" title="设置" size="large" is-link value="编辑" to="/setup" />
+            <van-button round size="large">退出登录</van-button>
         </van-cell-group>
     </div>
 </template>
@@ -29,4 +28,12 @@
     padding-bottom: 10px;
     background-color:#f5f5f5;
     }
+  .van-button--large{
+      width: 90%;
+      height: 40px;
+      color: #000;
+      background: #ccc;
+      line-height: 38px;
+      margin-left: 5%;
+  }
 </style>
