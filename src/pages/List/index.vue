@@ -21,7 +21,6 @@
 import Title from '@/components/titile.vue'
 import Tabbar from '@/components/tabbar'
 import Selected from './components/selected'
-import { Notify } from 'vant'
 export default {
   components: {Title, Tabbar, Selected},
   data () {
@@ -575,7 +574,6 @@ export default {
   },
   methods: {
     onChange (index) {
-      Notify({ type: 'primary', message: index })
       this.gridList = this.goods[index]
     }
   },

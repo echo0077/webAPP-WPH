@@ -4,8 +4,8 @@
             <van-grid-item v-for="(item,index) in gridList" :key="index">
                 <van-image :src="item.imgUrl">
                 <template v-slot:error>加载失败</template>
-                <span>{{item.text}}</span>
                 </van-image>
+                <span>{{item.text}}</span>
             </van-grid-item>
         </van-grid>
     </div>
