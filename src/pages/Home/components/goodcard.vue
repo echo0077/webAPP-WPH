@@ -23,7 +23,7 @@
             <img v-for="(item,index) in imgList" :key="index" :src="item" alt="">
         </div>
         <van-grid :column-num="3" :gutter="10"  >
-            <van-grid-item v-for="(item,index) in gridList" :key="index">
+            <van-grid-item v-for="(item,index) in gridList" :key="index" @click="goList(item)">
                 <van-image :src="item.imgUrl" />
                 <span>{{item.text}}</span>
             </van-grid-item>
@@ -79,6 +79,19 @@ export default {
           text: '女士衬衫'
         }
       ]
+    }
+  },
+  methods: {
+    goList (item) {
+      // let goods = item
+      // this.$router.push({ path: '/List' })
+      this.$router.push({
+        path: '/List',
+        query: {
+          goods: item,
+          entrance: '1'
+        }
+      })
     }
   }
 }

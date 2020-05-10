@@ -21,7 +21,7 @@ export default {
   created () {
     let path = this.$route.path
     switch (path) {
-      case '/List':
+      case '/Classification':
         this.getTitle = '分类'
         break
       case '/Cart':

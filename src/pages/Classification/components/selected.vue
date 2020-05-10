@@ -1,7 +1,7 @@
 <template>
     <div>
         <van-grid :column-num="3">
-            <van-grid-item v-for="(item,index) in gridList" :key="index">
+            <van-grid-item v-for="(item,index) in gridList" :key="index" @click="goList(item)">
                 <van-image :src="item.imgUrl">
                 <template v-slot:error>加载失败</template>
                 </van-image>
@@ -53,6 +53,17 @@ export default {
     //       text: '女士衬衫'
     //     }
     //   ]
+    }
+  },
+  methods: {
+    goList (item) {
+      this.$router.push({
+        path: '/List',
+        query: {
+          goods: item,
+          entrance: '2'
+        }
+      })
     }
   }
 }

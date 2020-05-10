@@ -1,7 +1,7 @@
 <template>
     <div style="background-color: #f5f5f5;padding-top:10px">
         <van-grid :column-num="4" :gutter="10" square >
-            <van-grid-item v-for="(item,index) in iconList" :key="index">
+            <van-grid-item v-for="(item,index) in iconList" :key="index" @click="goList(item)">
                 <van-icon class-prefix="my-icon" :name="item.name" color='rgb(254, 64, 112)'/>
                 <span>{{item.text}}</span>
             </van-grid-item>
@@ -46,6 +46,19 @@ export default {
           text: '直达专柜'
         }
       ]
+    }
+  },
+  methods: {
+    goList (item) {
+      // let goods = item
+      // this.$router.push({ path: '/List' })
+      this.$router.push({
+        path: '/List',
+        query: {
+          goods: item,
+          entrance: '1'
+        }
+      })
     }
   }
 }
