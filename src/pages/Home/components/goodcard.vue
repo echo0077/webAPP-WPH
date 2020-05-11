@@ -92,8 +92,8 @@ export default {
         }
       })
     },
-    toDetails(index){
-      this.$router.push({ path: `/Details?id=${index+1}` })
+    toDetails (index) {
+      this.$router.push({ path: `/Details?id=${index + 1}` })
     }
   }
 }

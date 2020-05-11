@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    data() {
+  data () {
     return {
       imageList: [
         'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/1598201753-1037030678738952318-602.jpg!85.webp',
@@ -22,10 +22,10 @@ export default {
         'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/561778573-1037030678738952318-612.jpg!85.webp',
         'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/561778573-1037030678738952318-612.jpg!85.webp',
         'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/133847439-1037030678738952318-615.jpg!85.webp',
-        'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/498497507-1037030678738952318-637.jpg!85.webp',
-      ],
-    };
-  },
+        'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/498497507-1037030678738952318-637.jpg!85.webp'
+      ]
+    }
+  }
 }
 </script>
 <style scoped>

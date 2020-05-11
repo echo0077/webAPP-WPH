@@ -12,21 +12,21 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       current: 0,
-      images:[
+      images: [
         'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/830365541-1037030678738952318-1037030678738960509-1_720x909_70.jpg!85.webp',
         'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/6633470-1037030678738952318-1037030678738960509-2_720x909_70.jpg!85.webp',
         'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/1214760341-1037030678738952318-1037030678738960509-4_720x909_70.jpg!85.webp',
-        'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/1663362234-1037030678738952318-1037030678738960509-3_720x909_70.jpg!85.webp',
+        'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/1663362234-1037030678738952318-1037030678738960509-3_720x909_70.jpg!85.webp'
       ]
-    };
+    }
   },
   methods: {
-    onChange(index) {
-      this.current = index;
-    },
+    onChange (index) {
+      this.current = index
+    }
   }
 }
 </script>

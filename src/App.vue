@@ -12,7 +12,6 @@
 
 <script>
 import { setCookie, getCookie } from '@/util/cookie'
-import { findMenuByUserId } from '@/util/fetch'
 export default {
   name: 'App',
   data () {
@@ -30,7 +29,6 @@ export default {
     this.token = token
     this.isloadding = true
     this.getFindMenu(token || getCookie('token'))
-    // this.getwhiteListAdd()
   },
   mounted () {
     this.$router.afterEach((to, from, next) => {
@@ -41,31 +39,8 @@ export default {
   },
   methods: {
     async getFindMenu (token) {
-      // let permission = await findMenuByUserId({ userId: token })
-      // let str = []
-      // if (permission.success) {
-      //   permission.rows.forEach(i => {
-      //     str.push(i.component)
-      //   })
-      // }
-      // let depArr = str.filter(i => i === 'DeptDataPermission' || i === 'AllDataPermission')
-      // let isHave = str.some(val => val === this.$route.name)
-      // this.$store.commit('isDepPermission', depArr)
-      // if (!isHave && this.$route.name !== 'ShoppingCartOrderDetail') this.$router.push({ path: 'Error' })
-      // else this.$router.push({ name: this.$route.name })
       this.isloadding = false
     }
-    // // 权限验证
-    // async getwhiteListAdd () {
-    //   this.isloadding = true
-    //   try {
-    //     await whiteListAdd({})
-    //     this.isloadding = false
-    //   } catch (e) {
-    //     this.isloadding = false
-    //     this.$router.push({ path: 'Error' })
-    //   }
-    // }
   }
 }
 </script>

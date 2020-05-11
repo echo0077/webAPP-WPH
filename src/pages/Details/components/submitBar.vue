@@ -23,25 +23,25 @@ export default {
 //   components: {
 //     goodSku
 //   },
-  data() {
+  data () {
     return {
       isShow: true,
       addGoods: false
-    };
+    }
   },
   methods: {
-    collection() {
-      this.isShow = false;
+    collection () {
+      this.isShow = false
     },
-    show() {
-      this.isShow = true;
+    show () {
+      this.isShow = true
     },
-    toShow(val) {
-      this.addGoods = val;
+    toShow (val) {
+      this.addGoods = val
     },
-    onShopping() {
-      this.$refs.goodSku.toShow(true);
-    },
+    onShopping () {
+      this.$refs.goodSku.toShow(true)
+    }
   }
-};
+}
 </script>

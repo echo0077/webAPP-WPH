@@ -16,7 +16,7 @@ import DetailCell from './components/detailCell'
 import SubmitBar from './components/submitBar'
 import DetailBottom from './components/detailBottom'
 export default {
-    components:{Title, Swipeitem, DetailContent, DetailCell, SubmitBar, DetailBottom}
+  components: {Title, Swipeitem, DetailContent, DetailCell, SubmitBar, DetailBottom}
 }
 </script>
 <style scoped>

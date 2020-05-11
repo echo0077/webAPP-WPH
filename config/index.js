@@ -3,9 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-/*
- * http://192.168.1.107:8999/marketing/userUnit/slectUserUnitList
-*/
+
 module.exports = {
   dev: {
     // Paths
@@ -13,13 +11,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/marketing': {
-        target: 'http://10.79.3.180:8998',
-        // target:'http://139.199.228.133:8080',
-        // target: 'http://127.0.0.1:8080', // 生产端口
-        // target: 'http://192.168.1.135:8998', // 益州端口
-        // target:'http://10.111.11.129:8998', // 宇清端口
-        // target:'http://172.24.244.2:8998', // 吴波端口
-        // target:'http://10.111.11.88:8998', // 海辉端口
+        target: 'http://127.0.0.1:8080', // 生产端口
         changeOrigin: true
       }
     },

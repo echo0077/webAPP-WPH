@@ -33,11 +33,11 @@ export default {
   },
   components: {wheelPlanting, Search, Tabbar, Grid, goodCard},
   methods: {
-    onRefresh() {
+    onRefresh () {
       setTimeout(() => {
-        this.isLoading = false;
-      }, 1000);
-    },
+        this.isLoading = false
+      }, 1000)
+    }
   },
   created () {
   },
