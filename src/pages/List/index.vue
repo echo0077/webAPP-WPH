@@ -1,8 +1,9 @@
 <template>
     <div>
       <Title/>
-        <van-dropdown-menu  :overlay='false' >
-          <van-dropdown-item v-model="value1" :options="option1"/>
+        <van-dropdown-menu class="menu_box">
+          <van-dropdown-item v-model="value1" :options="option1" />
+          <van-dropdown-item v-model="value2" :options="option2" />
         </van-dropdown-menu>
         <van-grid :column-num="2">
             <van-grid-item v-for="(item,index) in gridList" :key="index">
@@ -64,12 +65,17 @@ export default {
         }
       ],
       value1: 0,
+      value2: 'a',
       option1: [
-        { text: '销量优先', value: 0 },
-        { text: '价格由高到低', value: 1 },
-        { text: '价格由低到高', value: 2 },
-        { text: '综合优先', value: 3 }
-      ]
+        { text: '全部商品', value: 0 },
+        { text: '新款商品', value: 1 },
+        { text: '活动商品', value: 2 },
+      ],
+      option2: [
+        { text: '默认排序', value: 'a' },
+        { text: '好评排序', value: 'b' },
+        { text: '销量排序', value: 'c' },
+      ],
     }
   }
 }
@@ -78,5 +84,8 @@ export default {
 /deep/.title{
     text-align: left;
     width: 90%;
+}
+.menu_box{
+  height: 35px;
 }
 </style>

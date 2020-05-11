@@ -10,6 +10,7 @@
         origin-price="10.00"
         style="background-color: #fff;"
         thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+        @click="toDetails(index)"
         >
             <template #tags>
                 <van-tag plain type="danger">标签</van-tag>
@@ -83,8 +84,6 @@ export default {
   },
   methods: {
     goList (item) {
-      // let goods = item
-      // this.$router.push({ path: '/List' })
       this.$router.push({
         path: '/List',
         query: {
@@ -92,6 +91,9 @@ export default {
           entrance: '1'
         }
       })
+    },
+    toDetails(index){
+      this.$router.push({ path: `/Details?id=${index+1}` })
     }
   }
 }

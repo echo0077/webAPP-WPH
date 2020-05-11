@@ -42,6 +42,12 @@ export default {
       case '/Location':
         this.getTitle = '我的地址'
         break
+      case '/List':
+        this.getTitle = '商品列表'
+        break
+      case '/Details':
+        this.getTitle = '商品详情'
+        break
     }
   },
   methods: {
@@ -64,5 +70,8 @@ export default {
 .van-nav-bar {
     width: 100%;
     height: 50px;
+}
+.van-nav-bar__left, .van-nav-bar__right{
+  bottom: 15px;
 }
 </style>

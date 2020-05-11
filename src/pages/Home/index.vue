@@ -1,10 +1,16 @@
 <template>
   <div class="HomeTopCtr">
     <div class="Home">
-      <Search/>
-      <wheel-planting></wheel-planting>
-      <Grid/>
-      <goodCard/>
+       <Search/>
+      <van-pull-refresh
+        v-model="isLoading"
+        success-text="刷新成功"
+        @refresh="onRefresh"
+      >
+       <wheel-planting></wheel-planting>
+       <Grid/>
+       <goodCard/>
+      </van-pull-refresh>
       <Tabbar/>
     </div>
   </div>
@@ -22,10 +28,16 @@ export default {
   name: 'Home',
   data () {
     return {
+      isLoading: false
     }
   },
   components: {wheelPlanting, Search, Tabbar, Grid, goodCard},
   methods: {
+    onRefresh() {
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 1000);
+    },
   },
   created () {
   },

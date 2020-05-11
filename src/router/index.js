@@ -31,7 +31,7 @@ let router = new Router({
     { path: '/Contacts', name: 'Contacts', component: Contacts }, // 联系人
     { path: '/Order', name: 'Order', component: Order }, // 订单
     { path: '/Location', name: 'Location', component: Location }, // 地址
-    { path: '/Details', name: 'Details', component: Details } // 地址
+    { path: '/Details', name: 'Details', component: Details } // 详情
   ]
 })
 // 全局路由守卫
