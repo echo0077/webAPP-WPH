@@ -18,12 +18,12 @@ export const PAGE_NAME = {
 }
 
 function urlHandler (path) {
-  return ['/marketing', path].join('')
+  return ['http://localhost:8080', path].join('')
 }
 
 export const API = {
   // 获取权限
-  FIND_MENU_BY_USER_ID: urlHandler('/menu/findMenuByUserId'),
+  APPSELECT: urlHandler('/appSelect'),
   // 新休息室下单
   LOUNGENEW_ADD: urlHandler('/loungeNew/add')
 }

@@ -14,9 +14,9 @@ export function getOrderDetail (params, urlParams) {
   let urlParam = QS.stringify(urlParams)
   return post(API.ORDER_DETAIL + '?' + urlParam, params)
 }
-// 根据订单号查询付费选座信息   PAIDSEAT_FINDBYORDERID: urlHandler('/paidSeat/findByOrderId')
-export function getPaidSeatFindByOrderIdd (data) {
-  return get(API.PAIDSEAT_FINDBYORDERID, data)
+// 根据订单号查询付费选座信息    APPSELECT: urlHandler('appSelect'),
+export function appSelect (data) {
+  return get(API.APPSELECT, data)
 }
 
 // 权限验证 WHITELIST_ADD: urlHandler('/whiteList/add')

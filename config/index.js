@@ -11,7 +11,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/marketing': {
-        target: 'http://127.0.0.1:8080', // 生产端口
+        target: 'localhost:8080', // 生产端口
         changeOrigin: true
       }
     },

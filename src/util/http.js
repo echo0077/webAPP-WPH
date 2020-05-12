@@ -58,7 +58,7 @@ axios.interceptors.response.use(
  * @param {Object} params [请求时携带的参数]
  */
 export function get (url, params) { // 暴露get出去
-  params.rand = Math.random()
+  // params.rand = Math.random()
   return axios.get(url, { params }).then(checkCode)
 };
 
@@ -98,7 +98,7 @@ function checkCode (data) {
       console.error(e)
     })
   } else {
-    if (!data.success) {
+    if (data.code === -1) {
       return Promise.reject(data).catch((e) => {
         console.error(e)
         return data
