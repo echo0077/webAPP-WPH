@@ -17,7 +17,7 @@
 </template>
 
 <script type="text/javascript">
-import { appSelect } from '../../util/fetch'
+
 import wheelPlanting from './components/wheelPlanting.vue'
 import Grid from './components/grid'
 import goodCard from './components/goodcard'
@@ -38,11 +38,6 @@ export default {
         this.isLoading = false
       }, 1000)
     }
-  },
-  async created () {
-    let param = {'type': 1}
-    let data = await appSelect(param)
-    console.log(data)
   },
   mounted () {
   },

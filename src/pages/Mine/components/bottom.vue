@@ -16,12 +16,33 @@
             <van-cell icon="location" title="我的地址" size="large" is-link value="编辑" to="/Location"/>
             <van-cell icon="friends" title="联系人" size="large" is-link value="编辑" to="/Contacts"/>
         </van-cell-group>
-        <van-cell-group class="order">
-            <van-button round size="large">退出登录</van-button>
+        <van-cell-group class="order" v-show="token != null">
+            <van-button round size="large" @click="signOut">退出登录</van-button>
         </van-cell-group>
     </div>
 </template>
+<script>
+import {getCookie, delCookie} from '@/util/cookie'
 
+export default {
+    data() {
+        return {
+            token:''
+        }
+    },
+  created() {
+    this.token = getCookie("token")
+  },
+  methods: {
+      signOut(){
+          delCookie('token')
+          delCookie('userId')
+          this.token = getCookie("token")
+          this.$parent.changetoken(null)
+        },
+    }
+}
+</script>
 <style scoped>
   .order{
     width: 100%;

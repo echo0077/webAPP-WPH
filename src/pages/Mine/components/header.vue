@@ -7,7 +7,8 @@
         height="50px"
         :src="src"
         />
-        <p class="head_text">
+        <p v-if="token" class="head_text_u">{{token}}</p>
+        <p  v-else class="head_text" >
             <span @click="login">登录</span> |
             <span @click="login">注册</span>
         </p>
@@ -15,12 +16,15 @@
 </template>
 <script>
 import img from '@/assets/header.jpg'
+
 export default {
+  props:['token'],
   data () {
     return {
       src: img
     }
   },
+
   methods: {
     login () {
       this.$router.push('/SignIn')
@@ -43,5 +47,10 @@ export default {
     position: absolute;
     bottom: 0px;
     left: 40%;
+}
+.head_text_u{
+    position: absolute;
+    bottom: 0px;
+    left: 36%;
 }
 </style>

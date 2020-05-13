@@ -2,19 +2,19 @@
     <div style="background-color: rgb(245, 245, 245);margin-top:10px;margin-bottom:70px;">
         <img class="title_img" src="https://h2a.appsimg.com/a.appsimg.com/upload/flow/2020/04/29/153/15881292008877_1125x222_90.png!85.webp" alt="">
         <van-card
-        v-for="(item,index) in 3"
+        v-for="(item,index) in goodList"
         :key="index"
-        price="2.00"
-        desc="描述信息"
-        title="商品标题"
-        origin-price="10.00"
+        :price="item.vip_price"
+        :desc="item.describes"
+        :title="item.p_title"
+        :origin-price="item.price"
         style="background-color: #fff;"
-        thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+        :thumb="item.img"
         @click="toDetails(index)"
         >
             <template #tags>
-                <van-tag plain type="danger">标签</van-tag>
-                <van-tag plain type="danger">标签</van-tag>
+                <van-tag plain type="danger">新款</van-tag>
+                <van-tag plain type="danger">{{item.p_name}}</van-tag>
             </template>
             <template #footer>
                 <van-icon class-prefix="my-icon" name="gouwu" color='rgb(254, 64, 112)'/>
@@ -32,6 +32,7 @@
     </div>
 </template>
 <script>
+import { appSelect } from '../../../util/fetch'
 export default {
   data () {
     return {
@@ -79,8 +80,15 @@ export default {
           imgUrl: 'https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/108779/2019/0720/13/d4abee89-373c-4a32-b8c1-ed1edc8d9197_212x212_90.jpg',
           text: '女士衬衫'
         }
-      ]
+      ],
+      goodList:[]
     }
+  },
+  async created () {
+    let param = {'type': 1}
+    let data = await appSelect(param)
+    this.goodList = data.payload
+    console.log(this.goodList)
   },
   methods: {
     goList (item) {

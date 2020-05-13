@@ -20,11 +20,19 @@
     <van-cell-group>
         <van-cell>
             <template #title>
-                <span class="cell_p cell_p2"><van-icon name="certificate" color="#e80080" />发货及售后</span>
-                <span class="cell_p cell_p2"><van-icon name="certificate" color="#e80080" />顺丰配送</span>
-                <span class="cell_p cell_p2"><van-icon name="certificate" color="#e80080" />7天无理由退货</span>
-                <span class="cell_p cell_p2"><van-icon name="certificate" color="#e80080" />退货无忧</span>
-                <span class="cell_p cell_p2"><van-icon name="certificate" color="#e80080" />7天可换</span>
+                <span class="cell_p cell_p2" v-for="(item , index) in cellData" :key="index">
+                    <van-icon name="certificate" color="#e80080" />
+                    {{item}}
+                    </span>
+            </template>
+             <template #right-icon>
+                <van-icon name="ellipsis" style="line-height: inherit;" />
+            </template>
+        </van-cell>
+        <van-cell>
+            <template #title>
+                <van-icon name="good-job" color="rgb(232, 0, 128)" style="line-height: inherit;" />
+                <span class="cell_p" v-text="'宝贝评价（' + taking +')'"></span>
             </template>
              <template #right-icon>
                 <van-icon name="ellipsis" style="line-height: inherit;" />
@@ -33,6 +41,25 @@
     </van-cell-group>
 </div>
 </template>
+<script>
+export default {
+    props:{celllist:Object},
+    data() {
+        return {
+            taking:0,
+            cellData:['发货及售后', '顺丰配送', '7天无理由退货', '退货无忧', '7天可换']
+        }
+    },
+    watch: {
+        celllist:{
+            handler(val){
+                this.taking = val.is_put
+                
+            }
+        }
+    },
+}
+</script>
 <style scoped>
 .custom-title{
     font-size: 14px;

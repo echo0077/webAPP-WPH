@@ -1,11 +1,11 @@
 <template>
     <div class="detail_box">
-        <Title/>
-        <Swipeitem/>
-        <DetailContent/>
-        <DetailCell/>
-        <SubmitBar/>
-        <DetailBottom/>
+        <Title />
+        <Swipeitem :imglist = 'imgdata' />
+        <DetailContent :textlist = 'textlist'/>
+        <DetailCell :celllist = 'textlist'/>
+        <SubmitBar :submtlist = 'dataList'/>
+        <DetailBottom />
     </div>
 </template>
 <script>
@@ -15,8 +15,29 @@ import DetailContent from './components/detailContent'
 import DetailCell from './components/detailCell'
 import SubmitBar from './components/submitBar'
 import DetailBottom from './components/detailBottom'
+
+import {appDatails} from '@/util/fetch'
+import { getRouterParams } from '@/util/url.util'
+
 export default {
-  components: {Title, Swipeitem, DetailContent, DetailCell, SubmitBar, DetailBottom}
+  components: {Title, Swipeitem, DetailContent, DetailCell, SubmitBar, DetailBottom},
+  data() {
+      return {
+          dataList:{},
+          imgdata:[],
+          textlist:{}
+      }
+  },
+  async created() {
+    let id = getRouterParams('id')
+    let param = {'id': id}
+    let data = await appDatails(param)
+    this.dataList = data.payload
+    this.imgdata = this.dataList.sku.tree[0].v
+    this.textlist = this.dataList.param
+    // console.log(data.payload);
+    
+  },
 }
 </script>
 <style scoped>

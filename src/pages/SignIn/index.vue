@@ -21,12 +21,12 @@
         :rules="[{ required: true, message: '请填写密码' }]"
       />
       <div style="margin: 16px;">
-        <van-button round block type="info" native-type="submit">
+        <van-button round block type="info" native-type="submit" @click="goLogin">
           登录
         </van-button>
       </div>
        <div style="margin: 16px;">
-        <van-button round block type="info" native-type="submit">
+        <van-button round block type="info" native-type="submit" @click="goRegs">
           注册
         </van-button>
       </div>
@@ -34,7 +34,14 @@
   </div>
 </template>
 <script>
-import img from '../../assets/timg.jpg'
+import img from '@/assets/timg.jpg'
+import {appRegs} from '@/util/fetch'
+import {appLogin} from '@/util/fetch'
+import md5 from '@/util/md5'
+import {setCookie} from '../../util/cookie'
+import { Toast } from 'vant'
+import { Dialog } from 'vant'
+
 export default {
   name: 'SignIn',
   data () {
@@ -46,13 +53,48 @@ export default {
     }
   },
   methods: {
+    async goLogin(){
+      if(this.username && this.password){
+        let params = {
+          name: this.username,
+          pass: md5(this.password)
+        }
+        let data = await appLogin(params)
+        console.log(data);
+        if(data.code === 0){
+          setCookie('token',data.token)
+          setCookie('userId',data.userId)
+          Dialog.alert({
+            message: '登陆成功',
+          }).then(() => {
+            this.$router.push('/Mine')
+            this.username = ''
+            this.password = ''
+          });
+        }else{
+            Toast.fail(data.msg);
+        }
+      }
+    },
+    async goRegs(){
+      if(this.username && this.password){
+        let params = {
+          name: this.username,
+          pass: md5(this.password)
+        }
+        let data = await appRegs(params)
+        console.log(data);
+        if(data.code === 0){
+          Toast.success('注册成功，请登录！');
+          this.username = ''
+          this.password = ''
+        }
+      }
+    },
     onSubmit (values) {
       console.log('submit', values)
     },
     close () {
-      // this.$router.push({
-      //   name: 'Mine'
-      // })
       this.$router.push('/Mine')
     }
   }

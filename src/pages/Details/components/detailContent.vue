@@ -2,12 +2,33 @@
     <div class="p_box">
         <p style='line-height: 26px'>
             <van-button round size="mini">疯抢价</van-button>
-            <span style="font-size:26px">￥199</span>
-            <span class="old_price">￥799</span>
+            <span style="font-size:26px" v-text="'￥' + vip_price"></span>
+            <span class="old_price" v-text="'￥' + old_price"></span>
         </p>
-        <p class="p_title">茵曼 | 2020夏新款女款方领纯美修身小飞袖约会甜蜜棉质凉爽背带裙</p>
+        <p class="p_title" v-text="'茵曼 | ' + p_title"></p>
     </div>
 </template>
+<script>
+export default {
+    props:{textlist: Object},
+    data() {
+        return {
+            p_title:'',
+            old_price: 0,
+            vip_price: 0
+        }
+    },
+    watch: {
+       textlist:{
+           handler(val){
+             this.p_title = val.title
+             this.old_price = val.price
+             this.vip_price = val.vip_price
+           }
+       } 
+    },
+}
+</script>
 <style scoped lang="less">
 .p_box{
     background: #fff;

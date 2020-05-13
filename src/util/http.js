@@ -77,7 +77,10 @@ export function getExport (url) { // 暴露get出去
  * @param data
  * @returns {Promise}
 */
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+
 export function post (url, data = {}) { // 暴露post出去
+  // post请求头
   return axios.post(url, data).then(checkCode)
 };
 

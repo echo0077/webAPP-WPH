@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <goodSku :addGoods="addGoods" ref="goodSku" /> -->
+    <DetailSku :addGoods="addGoods" :skulist = 'skuData' ref="goodSku" />
     <van-goods-action>
       <van-goods-action-icon icon="chat-o" text="客服" color="#07c160" />
       <van-goods-action-icon icon="cart-o" to="/Cart" text="购物车" />
@@ -18,15 +18,27 @@
   </div>
 </template>
 <script>
-// import goodSku from "./datail-sku";
+import DetailSku from './detailSku'
+// import {getCookie} from "@/util/cookie";
+// import { Toast } from 'vant';
+
 export default {
-//   components: {
-//     goodSku
-//   },
+  props:{submtlist : Object},
+  components: {
+    DetailSku
+  },
   data () {
     return {
       isShow: true,
-      addGoods: false
+      addGoods: false,
+      skuData:{},
+    }
+  },
+  watch: {
+    submtlist:{
+      handler(val){
+        this.skuData = val
+      }
     }
   },
   methods: {
@@ -40,7 +52,13 @@ export default {
       this.addGoods = val
     },
     onShopping () {
-      this.$refs.goodSku.toShow(true)
+      // let userName = getCookie("token")
+      //  if(userName == undefined){
+      //    Toast('没有登录，请先登录');
+      //    this.$router.push('/SignIn')
+      //  }else{
+         this.$refs.goodSku.toShow(true);
+      //  }
     }
   }
 }
