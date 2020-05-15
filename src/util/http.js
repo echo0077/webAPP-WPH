@@ -21,18 +21,18 @@ import { getRouterParams } from '@/util/url.util'
 //   }
 // })
 
-axios.interceptors.request.use(config => {
-  let token = getRouterParams(URL_KEY.TOKEN)
-  if (!token) {
-    token = getCookie('token')
-  }
-  if (token) {
-    config.headers['token'] = token // 请求头带上token
-  }
-  return config
-}, error => {
-  return Promise.reject(error)
-})
+// axios.interceptors.request.use(config => {
+//   let token = getRouterParams(URL_KEY.TOKEN)
+//   if (!token) {
+//     token = getCookie('token')
+//   }
+//   if (token) {
+//     config.headers['token'] = token // 请求头带上token
+//   }
+//   return config
+// }, error => {
+//   return Promise.reject(error)
+// })
 
 /**
  *  响应拦截

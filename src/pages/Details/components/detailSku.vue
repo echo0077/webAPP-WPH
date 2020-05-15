@@ -39,8 +39,9 @@ export default {
   watch: {
       skulist:{
           handler(val){
-            // console.log('skulist',val);
             this.sku = val.sku 
+            console.log(this.sku);
+            
             this.sku.list.forEach(item => {
                 item.price *= 100
             });
@@ -56,8 +57,8 @@ export default {
     toShow(val) {
       this.show = val;
     },
-    onBuyClicked() {
-      window.console.log(this.$refs.goodsSku.getSkuData());
+    async onBuyClicked() {
+      // window.console.log(this.$refs.goodsSku.getSkuData());
       let obj = this.$refs.goodsSku.getSkuData()
       let parm = {
           skuId: obj.selectedSkuComb.id, //skuID
@@ -65,34 +66,30 @@ export default {
           procuctId: obj.goodsId,    //商品id
           shoppingNumber: obj.selectedNum  //购买数量
         };
-        window.console.log(parm);
-        // setShopping(parm).then(data => {
-        //   if(data.code === 0){
-        //     window.console.log(data);
-        //     let list = []
-        //     obj.selectedSkuComb.price = obj.selectedSkuComb.price/100
-        //     obj.selectedSkuComb.num = obj.selectedNum
-        //     obj.selectedSkuComb.vip_price =  obj.selectedSkuComb.price
-        //     obj.selectedSkuComb.product_id = obj.goodsId
-        //     list.push(obj.selectedSkuComb)
-        //     window.console.log(list);
-        //     this.$router.push({ path: "/sureOrder", query:{list:list}});
-        //   }
-        // });
+        let data = await setShopping(parm)
+          console.log(data);
+        if(data.code === 0){
+          // let list = []
+          // obj.selectedSkuComb.price = obj.selectedSkuComb.price / 100
+          // obj.selectedSkuComb.num = obj.selectedNum
+          // obj.selectedSkuComb.vip_price =  obj.selectedSkuComb.price
+          // obj.selectedSkuComb.product_id = obj.goodsId
+          // list.push(obj.selectedSkuComb)
+          // window.console.log(list);
+          // this.$router.push({ path: "/Payment", query:{list:list}});
+        }
     },
-    onAddCartClicked(val) {
-      window.console.log(val);
+    async onAddCartClicked(val) {
+      // window.console.log(val);
       let parm = {
           skuId: val.selectedSkuComb.id, //skuID
           userId: this.userId,  //用户id
           procuctId: val.goodsId,    //商品id
           shoppingNumber: val.selectedNum //购买数量
         };
-        console.log(parm);
-        setShopping(parm).then(data => {
-          console.log(data);
-          Toast(data.msg);
-        });
+      console.log(parm);
+      let data = await setShopping(parm)
+        Toast(data.msg);
     }
   }
 };

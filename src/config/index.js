@@ -42,4 +42,6 @@ export const API = {
   SETORDER: urlHandler('/setOrder'),
   //获取订单数据
   GETORDER: urlHandler('/getOrder'),
+  //获取订单数据
+  LIULAOBANZHUANSHUSEARCH: urlHandler('/liulaobanzhuanshuSearch'),
 }

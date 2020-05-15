@@ -33,6 +33,7 @@
 </template>
 <script>
 import { appSelect } from '../../../util/fetch'
+import { liulaobanzhuanshuSearch } from '../../../util/fetch'
 export default {
   data () {
     return {
@@ -85,10 +86,11 @@ export default {
     }
   },
   async created () {
-    let param = {'type': 1}
-    let data = await appSelect(param)
+    let param = {'name':'长'}
+    let data = await liulaobanzhuanshuSearch(param)
     this.goodList = data.payload
-    console.log(this.goodList)
+    console.log(data)
+
   },
   methods: {
     goList (item) {

@@ -48,6 +48,9 @@ export default {
       case '/Details':
         this.getTitle = '商品详情'
         break
+      case '/Payment':
+        this.getTitle = '支付订单'
+        break
     }
   },
   methods: {

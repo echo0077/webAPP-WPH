@@ -82,3 +82,8 @@ export function setOrder (data) {
 export function getOrder (data) {
   return get(API.GETORDER, data)
 }
+
+//获取订单数据 LIULAOBANZHUANSHUSEARCH: urlHandler('/liulaobanzhuanshuSearch')
+export function liulaobanzhuanshuSearch (data) {
+  return post(API.LIULAOBANZHUANSHUSEARCH, QS.stringify(data))
+}

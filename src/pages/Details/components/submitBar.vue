@@ -19,8 +19,8 @@
 </template>
 <script>
 import DetailSku from './detailSku'
-// import {getCookie} from "@/util/cookie";
-// import { Toast } from 'vant';
+import {getCookie} from "@/util/cookie";
+import { Toast } from 'vant';
 
 export default {
   props:{submtlist : Object},
@@ -52,13 +52,13 @@ export default {
       this.addGoods = val
     },
     onShopping () {
-      // let userName = getCookie("token")
-      //  if(userName == undefined){
-      //    Toast('没有登录，请先登录');
-      //    this.$router.push('/SignIn')
-      //  }else{
+      let userName = getCookie("token")
+       if(userName == undefined){
+         Toast('没有登录，请先登录');
+         this.$router.push('/SignIn')
+       }else{
          this.$refs.goodSku.toShow(true);
-      //  }
+       }
     }
   }
 }

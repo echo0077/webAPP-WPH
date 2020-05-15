@@ -13,6 +13,7 @@ import Contacts from '@/pages/Contacts/index.vue'
 import Order from '@/pages/Order/index.vue'
 import Location from '@/pages/Location/index.vue'
 import Details from '@/pages/Details/index.vue'
+import Payment from '@/pages/Payment/index.vue'
 // import { session } from '../util/storage.util'
 Vue.use(Router)
 
@@ -31,7 +32,8 @@ let router = new Router({
     { path: '/Contacts', name: 'Contacts', component: Contacts }, // 联系人
     { path: '/Order', name: 'Order', component: Order }, // 订单
     { path: '/Location', name: 'Location', component: Location }, // 地址
-    { path: '/Details', name: 'Details', component: Details } // 详情
+    { path: '/Details', name: 'Details', component: Details }, // 详情
+    { path: '/Payment', name: 'Payment', component: Payment }, // 支付订单页面
   ]
 })
 // 全局路由守卫
