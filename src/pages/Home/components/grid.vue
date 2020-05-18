@@ -1,7 +1,7 @@
 <template>
     <div style="background-color: #f5f5f5;padding-top:10px">
         <van-grid :column-num="4" :gutter="10" square >
-            <van-grid-item v-for="(item,index) in iconList" :key="index" @click="goList(item)">
+            <van-grid-item v-for="(item,index) in iconList" :key="index" @click="goList(index)">
                 <van-icon class-prefix="my-icon" :name="item.name" color='rgb(254, 64, 112)'/>
                 <span>{{item.text}}</span>
             </van-grid-item>
@@ -9,6 +9,9 @@
     </div>
 </template>
 <script>
+import { appSelect } from '@/util/fetch'
+import { Toast } from 'vant';
+
 export default {
   data () {
     return {
@@ -49,16 +52,17 @@ export default {
     }
   },
   methods: {
-    goList (item) {
-      // let goods = item
-      // this.$router.push({ path: '/List' })
-      this.$router.push({
-        path: '/List',
-        query: {
-          goods: item,
-          entrance: '1'
-        }
-      })
+    async goList (index) {
+      let param = {'type':index + 2}
+      let data = await appSelect(param)
+      console.log(data.payload);
+      if(data.payload.length){
+        let goodList = data.payload
+        this.$store.goodList = goodList
+        this.$router.push({path: '/List', query: {'goodList':goodList}})
+      }else{
+        Toast('暂时没有数据');
+      }
     }
   }
 }

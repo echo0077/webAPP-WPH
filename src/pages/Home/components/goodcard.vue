@@ -10,7 +10,7 @@
         :origin-price="item.price"
         style="background-color: #fff;"
         :thumb="item.img"
-        @click="toDetails(index)"
+        @click="toDetails(item.product_id)"
         >
             <template #tags>
                 <van-tag plain type="danger">新款</van-tag>
@@ -32,8 +32,10 @@
     </div>
 </template>
 <script>
-import { appSelect } from '../../../util/fetch'
-import { liulaobanzhuanshuSearch } from '../../../util/fetch'
+import { appSelect } from '@/util/fetch'
+import { liulaobanzhuanshuSearch } from '@/util/fetch'
+import { Toast } from 'vant';
+
 export default {
   data () {
     return {
@@ -86,24 +88,26 @@ export default {
     }
   },
   async created () {
-    let param = {'name':'长'}
-    let data = await liulaobanzhuanshuSearch(param)
+    let param = {'type':1}
+    let data = await appSelect(param)
     this.goodList = data.payload
     console.log(data)
 
   },
   methods: {
-    goList (item) {
-      this.$router.push({
-        path: '/List',
-        query: {
-          goods: item,
-          entrance: '1'
-        }
-      })
+    async goList (item) {
+      let param = {'name':item.text}
+      let data = await liulaobanzhuanshuSearch(param)
+      if(data.param.length){
+        let goodList = data.param
+        this.$store.goodList = goodList
+        this.$router.push({path: '/List', query: {'goodList':goodList}})
+      }else{
+        Toast('暂时没有数据');
+      }
     },
-    toDetails (index) {
-      this.$router.push({ path: `/Details?id=${index + 1}` })
+    toDetails (id) {
+      this.$router.push({ path: `/Details?id=${id}` })
     }
   }
 }

@@ -15,12 +15,13 @@
 export default {
   data () {
     return {
-      getTitle: ''
+      getTitle: '',
+      path:''
     }
   },
   created () {
-    let path = this.$route.path
-    switch (path) {
+    this.path = this.$route.path
+    switch (this.path ) {
       case '/Classification':
         this.getTitle = '分类'
         break
@@ -55,9 +56,15 @@ export default {
   },
   methods: {
     toHome () {
+      // if(this.path === '/List'){
+      //   this.$store.goodList = []
+      // }
       this.$router.push({ path: '/Home' })
     },
     toReverse () {
+      // if(this.path === '/List'){
+      //   this.$store.goodList = []
+      // }
       this.$router.go(-1)
     }
   }
