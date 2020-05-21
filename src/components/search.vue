@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import { liulaobanzhuanshuSearch } from '@/util/fetch'
+import { search } from '@/util/fetch'
 export default {
   data () {
     return {
@@ -13,20 +13,19 @@ export default {
     }
   },
   methods: {
-    async onSearch(){
-    if (this.value) {
-      let param = {'name':this.value}
-      let data = await liulaobanzhuanshuSearch(param)
-      if (data.code === 0) {
-        let goodList = data.param
-        this.$store.goodList = goodList
-        this.$router.push({ path: '/List', query:{'goodList':goodList} })
+    async onSearch () {
+      if (this.value) {
+        let param = {'name': this.value}
+        let data = await search(param)
+        if (data.code === 0) {
+          let goodList = data.param
+          this.$store.goodList = goodList
+          this.$router.push({ path: '/List', query: {'goodList': goodList} })
+        }
+      // console.log(this.$store.goodList)
       }
-      console.log(this.$store.goodList)
     }
-    
-    }
-  },
+  }
 }
 </script>
 <style scoped>

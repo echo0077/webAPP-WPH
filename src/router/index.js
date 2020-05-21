@@ -33,7 +33,7 @@ let router = new Router({
     { path: '/Order', name: 'Order', component: Order }, // 订单
     { path: '/Location', name: 'Location', component: Location }, // 地址
     { path: '/Details', name: 'Details', component: Details }, // 详情
-    { path: '/Payment', name: 'Payment', component: Payment }, // 支付订单页面
+    { path: '/Payment', name: 'Payment', component: Payment } // 支付订单页面
   ]
 })
 // 全局路由守卫

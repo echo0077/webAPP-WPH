@@ -10,7 +10,7 @@
 </template>
 <script>
 import { appSelect } from '@/util/fetch'
-import { Toast } from 'vant';
+import { Toast } from 'vant'
 
 export default {
   data () {
@@ -53,15 +53,15 @@ export default {
   },
   methods: {
     async goList (index) {
-      let param = {'type':index + 2}
+      let param = {'type': index + 2}
       let data = await appSelect(param)
-      console.log(data.payload);
-      if(data.payload.length){
+      // console.log(data.payload)
+      if (data.payload.length) {
         let goodList = data.payload
         this.$store.goodList = goodList
-        this.$router.push({path: '/List', query: {'goodList':goodList}})
-      }else{
-        Toast('暂时没有数据');
+        this.$router.push({path: '/List', query: {'goodList': goodList}})
+      } else {
+        Toast('暂时没有数据')
       }
     }
   }

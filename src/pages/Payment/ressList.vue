@@ -9,32 +9,32 @@
 </template>
 <script>
 import {setOrder} from '@/util/fetch'
-import {getCookie} from "@/util/cookie";
-import { Dialog } from "vant";
+import {getCookie} from '@/util/cookie'
+import { Dialog } from 'vant'
 export default {
-  props:['goodlist'],
-  data() {
+  props: ['goodlist'],
+  data () {
     return {
       chosenAddressId: '1',
-      addressShow:true,
-      price:0,
-      p_id:0,
-      p_num:0,
-      sku_id:0,
-      order_time:'',
+      addressShow: true,
+      price: 0,
+      p_id: 0,
+      p_num: 0,
+      sku_id: 0,
+      order_time: '',
       list: [
         {
           id: '1',
           name: '张三',
           tel: '13000000000',
-          address: '浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室',
+          address: '浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室'
         }
-      ],
-    };
+      ]
+    }
   },
   methods: {
-    async onAdd() {
-      let userId = getCookie("userId")
+    async onAdd () {
+      let userId = getCookie('userId')
       let parm = {
         o_num: 1,
         p_id: this.p_id,
@@ -58,52 +58,49 @@ export default {
           Dialog.alert({
             message: '支付成功'
           }).then(() => {
-            this.$router.push({ path: "/Home"})
-          });
+            this.$router.push({path: '/Home'})
+          })
         } else {
           Dialog.alert({
             message: data.msg
           }).then(() => {
-          });
+          })
         }
       } catch (error) {
-        window.console.log(error);
+        window.console.log(error)
       }
     },
-    onEdit() {
-      this.$router.push({ path: "/Location",query:{goodlist:this.goodlist,entrance:'1'} });
-    },
+    onEdit () {
+      this.$router.push({ path: '/Location', query: {goodlist: this.goodlist, entrance: '1'} })
+    }
   },
-  created() {
-    //获取当前时间并转换格式
+  created () {
+    // 获取当前时间并转换格式
     let time = new Date().getTime()
     let timesplit = ((new Date(time).toLocaleString()).split(' ')[0]).split('/')
-    if(timesplit[1] < 10 && timesplit[2] > 10){
-      this.order_time = `${timesplit[0]}-0${timesplit[1]}-${timesplit[2]}`;
-    }else if(timesplit[1] > 10 && timesplit[2] < 10){
-      this.order_time = `${timesplit[0]}-${timesplit[1]}-0${timesplit[2]}`;
-    }else if(timesplit[1] < 10 && timesplit[2] < 10){
-      this.order_time = `${timesplit[0]}-0${timesplit[1]}-0${timesplit[2]}`;
-    }else{
-      this.order_time = `${timesplit[0]}-${timesplit[1]}-${timesplit[2]}`;
+    if (timesplit[1] < 10 && timesplit[2] > 10) {
+      this.order_time = `${timesplit[0]}-0${timesplit[1]}-${timesplit[2]}`
+    } else if (timesplit[1] > 10 && timesplit[2] < 10) {
+      this.order_time = `${timesplit[0]}-${timesplit[1]}-0${timesplit[2]}`
+    } else if (timesplit[1] < 10 && timesplit[2] < 10) {
+      this.order_time = `${timesplit[0]}-0${timesplit[1]}-0${timesplit[2]}`
+    } else {
+      this.order_time = `${timesplit[0]}-${timesplit[1]}-${timesplit[2]}`
     }
-
-
-    if(this.goodlist){
-        this.goodlist.forEach(item => {
-        this.price += item.vip_price*item.num
+    if (this.goodlist) {
+      this.goodlist.forEach(item => {
+        this.price += item.vip_price * item.num
         this.p_num = item.num
         this.p_id = item.product_id
         this.sku_id = item.sku_id
-      });
-      if(this.$route.query && this.$route.query.address){
+      })
+      if (this.$route.query && this.$route.query.address) {
         this.list[0] = this.$route.query.address
         this.chosenAddressId = this.$route.query.address.id
       }
     }
-  },
-};    
-
+  }
+}
 </script>
 <style scoped>
 .van-address-list {

@@ -19,11 +19,11 @@
 </template>
 <script>
 import DetailSku from './detailSku'
-import {getCookie} from "@/util/cookie";
-import { Toast } from 'vant';
+import {getCookie} from '@/util/cookie'
+import { Toast } from 'vant'
 
 export default {
-  props:{submtlist : Object},
+  props: {submtlist: Object},
   components: {
     DetailSku
   },
@@ -31,12 +31,12 @@ export default {
     return {
       isShow: true,
       addGoods: false,
-      skuData:{},
+      skuData: {}
     }
   },
   watch: {
-    submtlist:{
-      handler(val){
+    submtlist: {
+      handler (val) {
         this.skuData = val
       }
     }
@@ -52,13 +52,13 @@ export default {
       this.addGoods = val
     },
     onShopping () {
-      let userName = getCookie("token")
-       if(userName == undefined){
-         Toast('没有登录，请先登录');
-         this.$router.push('/SignIn')
-       }else{
-         this.$refs.goodSku.toShow(true);
-       }
+      let userName = getCookie('token')
+      if (userName === undefined) {
+        Toast('没有登录，请先登录')
+        this.$router.push('/SignIn')
+      } else {
+        this.$refs.goodSku.toShow(true)
+      }
     }
   }
 }

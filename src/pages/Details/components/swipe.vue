@@ -12,11 +12,11 @@
 </template>
 <script>
 export default {
-  props:{imglist:Array},
+  props: {imglist: Array},
   data () {
     return {
       current: 0,
-      data:[],
+      data: []
       // images: [
       //   'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/830365541-1037030678738952318-1037030678738960509-1_720x909_70.jpg!85.webp',
       //   'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvop/00101577/10001211/6633470-1037030678738952318-1037030678738960509-2_720x909_70.jpg!85.webp',
@@ -26,11 +26,11 @@ export default {
     }
   },
   watch: {
-    imglist:{
-      handler(val) {
+    imglist: {
+      handler (val) {
         this.data = val
       },
-      immediate:true
+      immediate: true
     }
   },
   methods: {

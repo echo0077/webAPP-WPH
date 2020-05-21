@@ -4,36 +4,6 @@ import axios from 'axios' // 引入axios
 // vant的toast提示框组件，大家可根据自己的ui组件更改。
 // import { Toast } from 'vant'
 
-import { getCookie } from '@/util/cookie'
-
-import { URL_KEY } from '@/config'
-// import { local } from '@/util/storage.util'
-import { getRouterParams } from '@/util/url.util'
-/**
- *请求拦截
- */
-
-// const http = axios.create({
-//   timeout: 1000 * 6,
-//   withCredentials: true,
-//   headers: {
-//     'Content-Type': 'application/json; charset=utf-8'
-//   }
-// })
-
-// axios.interceptors.request.use(config => {
-//   let token = getRouterParams(URL_KEY.TOKEN)
-//   if (!token) {
-//     token = getCookie('token')
-//   }
-//   if (token) {
-//     config.headers['token'] = token // 请求头带上token
-//   }
-//   return config
-// }, error => {
-//   return Promise.reject(error)
-// })
-
 /**
  *  响应拦截
  */
@@ -77,7 +47,7 @@ export function getExport (url) { // 暴露get出去
  * @param data
  * @returns {Promise}
 */
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
 
 export function post (url, data = {}) { // 暴露post出去
   // post请求头

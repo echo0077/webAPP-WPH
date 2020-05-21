@@ -17,27 +17,26 @@ import SubmitBar from './components/submitBar'
 import DetailBottom from './components/detailBottom'
 
 import {appDatails} from '@/util/fetch'
-import { getRouterParams } from '@/util/url.util'
+import {getRouterParams} from '@/util/url.util'
 
 export default {
   components: {Title, Swipeitem, DetailContent, DetailCell, SubmitBar, DetailBottom},
-  data() {
-      return {
-          dataList:{},
-          imgdata:[],
-          textlist:{}
-      }
+  data () {
+    return {
+      dataList: {},
+      imgdata: [],
+      textlist: {}
+    }
   },
-  async created() {
-    let id = getRouterParams('id')
+  async created () {
+    let id = getRouterParams('id')
     let param = {'id': id}
     let data = await appDatails(param)
     this.dataList = data.payload
     this.imgdata = this.dataList.sku.tree[0].v
     this.textlist = this.dataList.param
     // console.log(data.payload);
-    
-  },
+  }
 }
 </script>
 <style scoped>

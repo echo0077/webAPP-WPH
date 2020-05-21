@@ -4,7 +4,7 @@
       <template v-slot:error>加载失败</template>
     </van-image>
     <span class="Close" @click="close()">X</span>
-    <van-form @submit="onSubmit">
+    <van-form>
       <van-field
         v-model="username"
         name="用户名"
@@ -35,12 +35,10 @@
 </template>
 <script>
 import img from '@/assets/timg.jpg'
-import {appRegs} from '@/util/fetch'
-import {appLogin} from '@/util/fetch'
+import {appRegs, appLogin} from '@/util/fetch'
 import md5 from '@/util/md5'
 import {setCookie} from '../../util/cookie'
-import { Toast } from 'vant'
-import { Dialog } from 'vant'
+import { Toast, Dialog } from 'vant'
 
 export default {
   name: 'SignIn',
@@ -53,46 +51,42 @@ export default {
     }
   },
   methods: {
-    async goLogin(){
-      if(this.username && this.password){
+    async goLogin () {
+      if (this.username && this.password) {
         let params = {
           name: this.username,
           pass: md5(this.password)
         }
         let data = await appLogin(params)
-        console.log(data);
-        if(data.code === 0){
-          setCookie('token',data.token)
-          setCookie('userId',data.userId)
+        if (data.code === 0) {
+          setCookie('token', data.token)
+          setCookie('userId', data.userId)
           Dialog.alert({
-            message: '登陆成功',
+            message: '登陆成功'
           }).then(() => {
             this.$router.push('/Mine')
             this.username = ''
             this.password = ''
-          });
-        }else{
-            Toast.fail(data.msg);
+          })
+        } else {
+          Toast.fail(data.msg)
         }
       }
     },
-    async goRegs(){
-      if(this.username && this.password){
+    async goRegs () {
+      if (this.username && this.password) {
         let params = {
           name: this.username,
           pass: md5(this.password)
         }
         let data = await appRegs(params)
-        console.log(data);
-        if(data.code === 0){
-          Toast.success('注册成功，请登录！');
+        // console.log(data)
+        if (data.code === 0) {
+          Toast.success('注册成功，请登录！')
           this.username = ''
           this.password = ''
         }
       }
-    },
-    onSubmit (values) {
-      console.log('submit', values)
     },
     close () {
       this.$router.push('/Mine')

@@ -15,18 +15,18 @@ import {getCookie} from '@/util/cookie'
 
 export default {
   components: {Title, Tabbar, Header, Bottom},
-   data () {
+  data () {
     return {
-      token:''
+      token: ''
     }
   },
   methods: {
-    changetoken(val) {
+    changetoken (val) {
       this.token = val
     }
   },
-  created() {
-     this.token = getCookie("token")
-  },
+  created () {
+    this.token = getCookie('token')
+  }
 }
 </script>

@@ -10,23 +10,23 @@
 </template>
 <script>
 export default {
-    props:{textlist: Object},
-    data() {
-        return {
-            p_title:'',
-            old_price: 0,
-            vip_price: 0
-        }
-    },
-    watch: {
-       textlist:{
-           handler(val){
-             this.p_title = val.title
-             this.old_price = val.price
-             this.vip_price = val.vip_price
-           }
-       } 
-    },
+  props: {textlist: Object},
+  data () {
+    return {
+      p_title: '',
+      old_price: 0,
+      vip_price: 0
+    }
+  },
+  watch: {
+    textlist: {
+      handler (val) {
+        this.p_title = val.title
+        this.old_price = val.price
+        this.vip_price = val.vip_price
+      }
+    }
+  }
 }
 </script>
 <style scoped lang="less">

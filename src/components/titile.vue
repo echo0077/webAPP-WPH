@@ -16,12 +16,12 @@ export default {
   data () {
     return {
       getTitle: '',
-      path:''
+      path: ''
     }
   },
   created () {
     this.path = this.$route.path
-    switch (this.path ) {
+    switch (this.path) {
       case '/Classification':
         this.getTitle = '分类'
         break

@@ -25,22 +25,22 @@
 import {getCookie, delCookie} from '@/util/cookie'
 
 export default {
-    data() {
-        return {
-            token:''
-        }
-    },
-  created() {
-    this.token = getCookie("token")
+  data () {
+    return {
+      token: ''
+    }
+  },
+  created () {
+    this.token = getCookie('token')
   },
   methods: {
-      signOut(){
-          delCookie('token')
-          delCookie('userId')
-          this.token = getCookie("token")
-          this.$parent.changetoken(null)
-        },
+    signOut () {
+      delCookie('token')
+      delCookie('userId')
+      this.token = getCookie('token')
+      this.$parent.changetoken(null)
     }
+  }
 }
 </script>
 <style scoped>

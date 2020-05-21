@@ -13,14 +13,14 @@
   />
 </template>
 <script>
-import { setShopping } from "@/util/fetch";
-import {getCookie} from "@/util/cookie";
+import { setShopping } from '@/util/fetch'
+import {getCookie} from '@/util/cookie'
 // import { Dialog } from "vant";
-import { Toast } from 'vant';
+import { Toast } from 'vant'
 
 export default {
-  props:{skulist : Object},
-  data() {
+  props: {skulist: Object},
+  data () {
     return {
       show: false,
       goodsId: 1,
@@ -32,65 +32,61 @@ export default {
       goods: {
         // 数据结构见下方文档
         // 默认商品 sku 缩略图
-        picture: ""
+        picture: ''
       }
-    };
+    }
   },
   watch: {
-      skulist:{
-          handler(val){
-            this.sku = val.sku 
-            console.log(this.sku);
-            
-            this.sku.list.forEach(item => {
-                item.price *= 100
-            });
-            this.sku.price = this.sku.price.toFixed(2)
-            this.goods.picture = this.sku.tree[0].v[0].previewImgUrl 
-          }
+    skulist: {
+      handler (val) {
+        this.sku = val.sku
+        this.sku.list.forEach(item => {
+          item.price *= 100
+        })
+        this.sku.price = this.sku.price.toFixed(2)
+        this.goods.picture = this.sku.tree[0].v[0].previewImgUrl
       }
+    }
   },
-  created() {
-    this.userId = getCookie("userId")
+  created () {
+    this.userId = getCookie('userId')
   },
   methods: {
-    toShow(val) {
-      this.show = val;
+    toShow (val) {
+      this.show = val
     },
-    async onBuyClicked() {
+    async onBuyClicked () {
       // window.console.log(this.$refs.goodsSku.getSkuData());
       let obj = this.$refs.goodsSku.getSkuData()
       let parm = {
-          skuId: obj.selectedSkuComb.id, //skuID
-          userId: this.userId,  //用户id
-          procuctId: obj.goodsId,    //商品id
-          shoppingNumber: obj.selectedNum  //购买数量
-        };
-        let data = await setShopping(parm)
-          console.log(data);
-        if(data.code === 0){
-          // let list = []
-          // obj.selectedSkuComb.price = obj.selectedSkuComb.price / 100
-          // obj.selectedSkuComb.num = obj.selectedNum
-          // obj.selectedSkuComb.vip_price =  obj.selectedSkuComb.price
-          // obj.selectedSkuComb.product_id = obj.goodsId
-          // list.push(obj.selectedSkuComb)
-          // window.console.log(list);
-          // this.$router.push({ path: "/Payment", query:{list:list}});
-        }
+        skuId: obj.selectedSkuComb.id, // skuID
+        userId: this.userId, // 用户id
+        procuctId: obj.goodsId, // 商品id
+        shoppingNumber: obj.selectedNum // 购买数量
+      }
+      let data = await setShopping(parm)
+      if (data.code === 0) {
+        let list = []
+        obj.selectedSkuComb.price = obj.selectedSkuComb.price / 100
+        obj.selectedSkuComb.num = obj.selectedNum
+        obj.selectedSkuComb.vip_price = obj.selectedSkuComb.price
+        obj.selectedSkuComb.product_id = obj.goodsId
+        list.push(obj.selectedSkuComb)
+        window.console.log(list)
+        this.$router.push({path: '/Payment', query: {list: list}})
+      }
     },
-    async onAddCartClicked(val) {
+    async onAddCartClicked (val) {
       // window.console.log(val);
       let parm = {
-          skuId: val.selectedSkuComb.id, //skuID
-          userId: this.userId,  //用户id
-          procuctId: val.goodsId,    //商品id
-          shoppingNumber: val.selectedNum //购买数量
-        };
-      console.log(parm);
+        skuId: val.selectedSkuComb.id, // skuID
+        userId: this.userId, // 用户id
+        procuctId: val.goodsId, // 商品id
+        shoppingNumber: val.selectedNum // 购买数量
+      }
       let data = await setShopping(parm)
-        Toast(data.msg);
+      Toast(data.msg)
     }
   }
-};
+}
 </script>

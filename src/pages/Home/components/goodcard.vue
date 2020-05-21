@@ -32,9 +32,8 @@
     </div>
 </template>
 <script>
-import { appSelect } from '@/util/fetch'
-import { liulaobanzhuanshuSearch } from '@/util/fetch'
-import { Toast } from 'vant';
+import {appSelect, search} from '@/util/fetch'
+import { Toast } from 'vant'
 
 export default {
   data () {
@@ -84,26 +83,25 @@ export default {
           text: '女士衬衫'
         }
       ],
-      goodList:[]
+      goodList: []
     }
   },
   async created () {
-    let param = {'type':1}
+    let param = {'type': 1}
     let data = await appSelect(param)
     this.goodList = data.payload
-    console.log(data)
-
+    // console.log(data)
   },
   methods: {
     async goList (item) {
-      let param = {'name':item.text}
-      let data = await liulaobanzhuanshuSearch(param)
-      if(data.param.length){
+      let param = {'name': item.text}
+      let data = await search(param)
+      if (data.param.length) {
         let goodList = data.param
         this.$store.goodList = goodList
-        this.$router.push({path: '/List', query: {'goodList':goodList}})
-      }else{
-        Toast('暂时没有数据');
+        this.$router.push({path: '/List', query: {'goodList': goodList}})
+      } else {
+        Toast('暂时没有数据')
       }
     },
     toDetails (id) {

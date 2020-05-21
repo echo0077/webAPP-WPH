@@ -24,24 +24,22 @@ function urlHandler (path) {
 export const API = {
   // 首页获取商品信息
   APPSELECT: urlHandler('/appSelect'),
-  //详情页获取商品信息
+  // 详情页获取商品信息
   APPDATAILS: urlHandler('/appDatails'),
-  //用户注册
+  // 用户注册
   APPREGS: urlHandler('/appRegs'),
-  //用户登录
+  // 用户登录
   APPLOGIN: urlHandler('/appLogin'),
-  //购物车商品信息提交
+  // 购物车商品信息提交
   SETSHOPPING: urlHandler('/setShopping'),
-  //购物车商品信息获取
+  // 购物车商品信息获取
   GETSHOPPING: urlHandler('/getShopping'),
-  //删除购物车商品
+  // 删除购物车商品
   DELETSHOPPING: urlHandler('/deleteShopping'),
-  //模糊查询
-  SEARCH: urlHandler('/search'),
-  //提交订单
+  // 提交订单
   SETORDER: urlHandler('/setOrder'),
-  //获取订单数据
+  // 获取订单数据
   GETORDER: urlHandler('/getOrder'),
-  //获取订单数据
-  LIULAOBANZHUANSHUSEARCH: urlHandler('/liulaobanzhuanshuSearch'),
+  // 模糊查询
+  SEARCH: urlHandler('/search')
 }

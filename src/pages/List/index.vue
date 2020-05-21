@@ -28,18 +28,18 @@ export default {
     }
   },
   methods: {
-    async onDatails(item) {
+    async onDatails (item) {
       let id = item.product_id
-      this.$router.push({ path: `/Details?id=${id}`})
+      this.$router.push({path: `/Details?id=${id}`})
     }
   },
-  created() {
-    if(this.$store.goodList === undefined){
+  created () {
+    if (this.$store.goodList === undefined) {
       this.gridList = this.$route.query.goodList
-    }else{
+    } else {
       this.gridList = this.$store.goodList
     }
-  },
+  }
 }
 </script>
 <style lang="less" scoped>

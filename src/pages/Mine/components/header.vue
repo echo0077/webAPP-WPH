@@ -18,7 +18,7 @@
 import img from '@/assets/header.jpg'
 
 export default {
-  props:['token'],
+  props: ['token'],
   data () {
     return {
       src: img

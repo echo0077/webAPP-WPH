@@ -43,21 +43,20 @@
 </template>
 <script>
 export default {
-    props:{celllist:Object},
-    data() {
-        return {
-            taking:0,
-            cellData:['发货及售后', '顺丰配送', '7天无理由退货', '退货无忧', '7天可换']
-        }
-    },
-    watch: {
-        celllist:{
-            handler(val){
-                this.taking = val.is_put
-                
-            }
-        }
-    },
+  props: {celllist: Object},
+  data () {
+    return {
+      taking: 0,
+      cellData: ['发货及售后', '顺丰配送', '7天无理由退货', '退货无忧', '7天可换']
+    }
+  },
+  watch: {
+    celllist: {
+      handler (val) {
+        this.taking = val.is_put
+      }
+    }
+  }
 }
 </script>
 <style scoped>
