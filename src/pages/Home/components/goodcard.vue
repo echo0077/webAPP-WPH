@@ -64,19 +64,19 @@ export default {
         },
         {
           imgUrl: 'https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/611579/2020/0420/67/1005f290-2569-4836-9a62-56eff582d3a7_212x212_90.jpg',
-          text: '护肤套装'
+          text: '洗护'
         },
         {
           imgUrl: 'https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/2019/03/08/129/6b3853d2-b199-43fb-a7db-b8d64497f2ff_212x212_90.jpg',
-          text: '跑步鞋'
+          text: '休闲男鞋'
         },
         {
           imgUrl: 'https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/138720/2019/1216/30/0fc9d314-4367-42f6-a769-56086249d32b_212x212_90.jpg',
-          text: '女单鞋'
+          text: '女鞋'
         },
         {
-          imgUrl: 'https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/2019/10/07/43/01d4b9fa-9d15-4222-af4e-15dfc8086dbe_212x212_90.jpg',
-          text: '运动裤'
+          imgUrl: 'https://h2a.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/606111/2020/0515/192/83651140-dc2b-455c-9844-8706c8201c2b_720x909_70.jpg!85.webp',
+          text: '牛仔裤'
         },
         {
           imgUrl: 'https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/108779/2019/0720/13/d4abee89-373c-4a32-b8c1-ed1edc8d9197_212x212_90.jpg',

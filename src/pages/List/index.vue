@@ -1,7 +1,7 @@
 <template>
     <div>
       <Title/>
-        <van-grid :column-num="2">
+        <van-grid :column-num="2" style="margin-bottom:70px">
             <van-grid-item v-for="(item,index) in gridList" :key="index" @click="onDatails(item)">
                 <van-image :src="item.img">
                 <template v-slot:error>加载失败</template>

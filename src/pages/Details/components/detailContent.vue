@@ -32,6 +32,8 @@ export default {
 <style scoped lang="less">
 .p_box{
     background: #fff;
+    padding-top: 5px;
+    margin-top: 5px;
 }
 .van-button--mini{
     background-image: linear-gradient(270deg,#cb78dc,#de3d96);

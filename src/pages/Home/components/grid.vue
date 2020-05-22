@@ -54,14 +54,25 @@ export default {
   methods: {
     async goList (index) {
       let param = {'type': index + 2}
-      let data = await appSelect(param)
-      // console.log(data.payload)
-      if (data.payload.length) {
-        let goodList = data.payload
-        this.$store.goodList = goodList
-        this.$router.push({path: '/List', query: {'goodList': goodList}})
-      } else {
-        Toast('暂时没有数据')
+      if(param.type === 6){
+        let param = {'type': 1}
+        let data = await appSelect(param)
+        if (data.payload.length) {
+          let goodList = data.payload
+          this.$store.goodList = goodList
+          this.$router.push({path: '/List', query: {'goodList': goodList}})
+        } else {
+            Toast('暂时没有数据')
+        }
+      }else{
+        let data = await appSelect(param)
+        if (data.payload.length) {
+          let goodList = data.payload
+          this.$store.goodList = goodList
+          this.$router.push({path: '/List', query: {'goodList': goodList}})
+        } else {
+          Toast('暂时没有数据')
+        }
       }
     }
   }
