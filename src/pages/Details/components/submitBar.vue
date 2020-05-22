@@ -53,7 +53,7 @@ export default {
     },
     onShopping () {
       let userName = getCookie('token')
-      if (userName === undefined) {
+      if (userName === undefined || userName === null) {
         Toast('没有登录，请先登录')
         this.$router.push('/SignIn')
       } else {

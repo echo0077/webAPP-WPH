@@ -56,7 +56,7 @@ export default {
       this.show = val
     },
     async onBuyClicked () {
-      // window.console.log(this.$refs.goodsSku.getSkuData());
+      window.console.log(this.$refs.goodsSku.getSkuData());
       let obj = this.$refs.goodsSku.getSkuData()
       let parm = {
         skuId: obj.selectedSkuComb.id, // skuID
@@ -72,7 +72,7 @@ export default {
         obj.selectedSkuComb.vip_price = obj.selectedSkuComb.price
         obj.selectedSkuComb.product_id = obj.goodsId
         list.push(obj.selectedSkuComb)
-        window.console.log(list)
+        // window.console.log(list)
         this.$router.push({path: '/Payment', query: {list: list}})
       }
     },
