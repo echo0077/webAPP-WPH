@@ -19,16 +19,15 @@ export default {
   },
   methods: {
     async goList (item) {
-      console.log(item.text);
-        let param = {'name': item.text}
-        let data = await search(param)
-        if (data.code === 0) {
-          let goodList = data.param
-          console.log(data);
-          
-          this.$store.goodList = goodList
-          this.$router.push({ path: '/List', query: {'goodList': goodList} })
-        }
+      // console.log(item.text);
+      let param = {'name': item.text}
+      let data = await search(param)
+      if (data.code === 0) {
+        let goodList = data.param
+        // console.log(data);
+        this.$store.goodList = goodList
+        this.$router.push({ path: '/List', query: {'goodList': goodList} })
+      }
     }
   }
 }

@@ -165,7 +165,7 @@ export default {
     height: 100%;
   }
   .van-card{
-      padding: 16px 10px 16px 50px;
+      padding: 16px 10px 20px 50px;
   }
   .checke_item{
       position: absolute;

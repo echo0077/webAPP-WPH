@@ -25,21 +25,20 @@ import {getCookie} from '@/util/cookie'
 
 export default {
   components: {Title},
-  data() {
+  data () {
     return {
-      orderList:[]
+      orderList: []
     }
   },
-  async created() {
+  async created () {
     let userId = getCookie('userId')
     let parm = {'userId': userId}
     let data = await getOrder(parm)
-    console.log(data);
-    if(data.code === 0){
+    // console.log(data);
+    if (data.code === 0) {
       this.orderList = data.param
     }
-    
-  },
+  }
 }
 </script>
 <style scoped>

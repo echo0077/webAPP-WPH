@@ -41,24 +41,24 @@ export default {
       goods: {
         '0': [
           {
-            imgUrl: 'https://c.vpimg1.com/upcb/2019/11/15/107/ias_932cfc828e5718db12ea59f1a2bc872f_120x120_90.png',
-            text: '香薰蜡烛'
+            imgUrl: 'https://c.vpimg1.com/upcb/2019/10/18/151/ias_2760ef39bb3ff758af413d6779cab52e_120x120_90.png',
+            text: '毛衣'
           },
           {
-            imgUrl: 'https://a.appsimg.com/upload/merchandise/pdcvis/614913/2020/0219/13/743dacad-1962-4b98-a49d-d8fd2c0f7709_420_531_120x120_90.jpg!75.webp',
-            text: '理发/美发'
+            imgUrl: 'https://a.vpimg3.com/upload/goadmin/2019/10/22/151/15717104531666_120x120_90.jpg',
+            text: '连衣裙'
           },
           {
-            imgUrl: 'https://c.vpimg1.com/upcb/2019/11/14/10/ias_da0f6c1be3ee4507f5cd537be19a3ed4_120x120_90.png',
-            text: '休闲食品'
+            imgUrl: 'https://a.vpimg3.com/upload/goadmin/2019/10/22/20/15717101185745_120x120_90.jpg',
+            text: 'T恤'
           },
           {
             imgUrl: 'https://a.appsimg.com/upload/merchandise/pdcvis/613137/2020/0316/110/a42fb9f5-c5e6-4d76-a6d6-a61e6fc6b1a6_420_531_120x120_90.jpg!75.webp',
-            text: '手机通讯'
+            text: '手机'
           },
           {
             imgUrl: 'https://c.vpimg1.com/upcb/2019/11/14/175/ias_f1da7cb4306f30b7b0ad3cec56e4a031_120x120_90.png',
-            text: '母婴纸品'
+            text: '母婴'
           },
           {
             imgUrl: 'https://d.vpimg1.com/upcb/2019/11/14/30/ias_9b37732d46b7447dbdfce73065aa373e_120x120_90.png',
