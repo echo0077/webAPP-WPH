@@ -85,6 +85,10 @@ export default {
           Toast.success('注册成功，请登录！')
           this.username = ''
           this.password = ''
+        } else if (data.code === 100) {
+          Dialog.alert({
+            message: '账号已存在!'
+          })
         }
       }
     },

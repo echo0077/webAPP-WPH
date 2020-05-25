@@ -1,17 +1,13 @@
 <template>
   <div id="app">
-    <div v-show="isloadding"
-         class="box">
-    </div>
-    <div v-show="!isloadding"
-         class="box">
+    <div class="box">
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
-import { setCookie, getCookie } from '@/util/cookie'
+import {setCookie} from '@/util/cookie'
 export default {
   name: 'App',
   data () {
@@ -27,8 +23,6 @@ export default {
       setCookie('token', token)
     }
     this.token = token
-    this.isloadding = true
-    this.getFindMenu(token || getCookie('token'))
   },
   mounted () {
     this.$router.afterEach((to, from, next) => {
@@ -38,9 +32,6 @@ export default {
     })
   },
   methods: {
-    async getFindMenu (token) {
-      this.isloadding = false
-    }
   }
 }
 </script>
