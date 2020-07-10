@@ -21,7 +21,8 @@
 <script>
 import Title from '@/components/titile'
 import { getOrder } from '@/util/fetch'
-import {getCookie} from '@/util/cookie'
+// import {getCookie} from '@/util/cookie'
+import {local} from '@/util/storage.util'
 
 export default {
   components: {Title},
@@ -31,7 +32,7 @@ export default {
     }
   },
   async created () {
-    let userId = getCookie('userId')
+    let userId = local('userId')
     let parm = {'userId': userId}
     let data = await getOrder(parm)
     // console.log(data);

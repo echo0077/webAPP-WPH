@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {setCookie} from '@/util/cookie'
+import {local} from '@/util/storage.util'
 export default {
   name: 'App',
   data () {
@@ -20,7 +20,7 @@ export default {
     let token = this.$route.query.token
     if (token) {
       this.$store.state.token = token
-      setCookie('token', token)
+      local('token', token)
     }
     this.token = token
   },

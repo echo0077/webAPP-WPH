@@ -11,7 +11,8 @@ import Title from '@/components/titile.vue'
 import Tabbar from '@/components/tabbar'
 import Header from './components/header'
 import Bottom from './components/bottom'
-import {getCookie} from '@/util/cookie'
+// import {getCookie} from '@/util/cookie'
+import {local} from '@/util/storage.util'
 
 export default {
   components: {Title, Tabbar, Header, Bottom},
@@ -26,7 +27,7 @@ export default {
     }
   },
   created () {
-    this.token = getCookie('token')
+    this.token = local('token')
   }
 }
 </script>

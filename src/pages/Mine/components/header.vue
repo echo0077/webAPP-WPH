@@ -15,7 +15,8 @@
     </div>
 </template>
 <script>
-import img from '@/assets/header.jpg'
+// import img from '@/assets/header.jpg'
+import img from '../../../assets/header.jpg'
 
 export default {
   props: ['token'],

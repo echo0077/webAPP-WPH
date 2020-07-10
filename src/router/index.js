@@ -19,7 +19,7 @@ Vue.use(Router)
 
 // 路由匹配规则
 let router = new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     { path: '/', redirect: '/Home' }, // 首页
     { path: '/Home', name: 'Home', component: Home }, // 首页

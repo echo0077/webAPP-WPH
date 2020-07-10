@@ -19,7 +19,8 @@
 </template>
 <script>
 import DetailSku from './detailSku'
-import {getCookie} from '@/util/cookie'
+// import {getCookie} from '@/util/cookie'
+import {local} from '@/util/storage.util'
 import { Toast } from 'vant'
 
 export default {
@@ -52,7 +53,7 @@ export default {
       this.addGoods = val
     },
     onShopping () {
-      let userName = getCookie('token')
+      let userName = local('token')
       if (userName === undefined || userName === null) {
         Toast('没有登录，请先登录')
         this.$router.push('/SignIn')

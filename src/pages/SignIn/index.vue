@@ -34,10 +34,10 @@
   </div>
 </template>
 <script>
-import img from '@/assets/timg.jpg'
+import img from '../../assets/timg.jpg'
 import {appRegs, appLogin} from '@/util/fetch'
 import md5 from '@/util/md5'
-import {setCookie} from '../../util/cookie'
+import {local} from '@/util/storage.util'
 import { Toast, Dialog } from 'vant'
 
 export default {
@@ -59,8 +59,8 @@ export default {
         }
         let data = await appLogin(params)
         if (data.code === 0) {
-          setCookie('token', data.token)
-          setCookie('userId', data.userId)
+          local('token', data.token)
+          local('userId', data.userId)
           Dialog.alert({
             message: '登陆成功'
           }).then(() => {

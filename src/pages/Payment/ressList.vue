@@ -9,7 +9,8 @@
 </template>
 <script>
 import {setOrder} from '@/util/fetch'
-import {getCookie} from '@/util/cookie'
+// import {getCookie} from '@/util/cookie'
+import {local} from '@/util/storage.util'
 import { Dialog } from 'vant'
 export default {
   props: ['goodlist'],
@@ -34,7 +35,7 @@ export default {
   },
   methods: {
     async onAdd () {
-      let userId = getCookie('userId')
+      let userId = local('userId')
       let parm = {
         o_num: 1,
         p_id: this.p_id,

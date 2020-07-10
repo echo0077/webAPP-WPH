@@ -18,7 +18,8 @@ export const PAGE_NAME = {
 }
 
 function urlHandler (path) {
-  return ['http://localhost:8080', path].join('')
+  return ['http:192.168.0.155:8080', path].join('')
+  // return ['http://localhost:8080', path].join('')
 }
 
 export const API = {

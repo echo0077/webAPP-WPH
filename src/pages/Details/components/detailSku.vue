@@ -14,7 +14,7 @@
 </template>
 <script>
 import { setShopping } from '@/util/fetch'
-import {getCookie} from '@/util/cookie'
+import {local} from '@/util/storage.util'
 // import { Dialog } from "vant";
 import { Toast } from 'vant'
 
@@ -49,7 +49,7 @@ export default {
     }
   },
   created () {
-    this.userId = getCookie('userId')
+    this.userId = local('userId')
   },
   methods: {
     toShow (val) {

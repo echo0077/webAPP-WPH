@@ -32,7 +32,7 @@
 </div>
 </template>
 <script>
-import {getCookie} from '@/util/cookie'
+import {local} from '@/util/storage.util'
 import { getShopping, deleteShopping, setShopping } from '@/util/fetch'
 import {Dialog, Toast} from 'vant'
 
@@ -50,7 +50,7 @@ export default {
   methods: {
     // 获取商品信息
     async getList () {
-      let userId = getCookie('userId')
+      let userId = local('userId')
       let params = {'userId': userId}
       let data = await getShopping(params)
       this.carlist = data.payload
@@ -67,7 +67,7 @@ export default {
     },
     // 修改商品数量
     async onChange (value, index) {
-      let userId = getCookie('userId')
+      let userId = local('userId')
       let skuId = this.carlist[index].sku_id
       let procuctId = this.carlist[index].product_id
       let parm = {
@@ -126,7 +126,7 @@ export default {
       Dialog.confirm({
         message: '确认删除这个宝贝？'
       }).then(async () => {
-        let userId = getCookie('userId')
+        let userId = local('userId')
         let skuid = this.carlist[index].sku_id
         let params = {'userId': userId, 'skuId': skuid}
         await deleteShopping(params)

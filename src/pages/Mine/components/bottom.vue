@@ -22,7 +22,8 @@
     </div>
 </template>
 <script>
-import {getCookie, delCookie} from '@/util/cookie'
+// import {getCookie, delCookie} from '@/util/cookie'
+import {local} from '@/util/storage.util'
 
 export default {
   data () {
@@ -31,13 +32,14 @@ export default {
     }
   },
   created () {
-    this.token = getCookie('token')
+    this.token = local('token')
   },
   methods: {
     signOut () {
-      delCookie('token')
-      delCookie('userId')
-      this.token = getCookie('token')
+      // delCookie('token')
+      // delCookie('userId')
+      localStorage.clear()
+      this.token = local('token')
       this.$parent.changetoken(null)
     }
   }
