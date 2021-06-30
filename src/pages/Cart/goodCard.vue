@@ -86,7 +86,7 @@ export default {
       let price = Number
       let s = 0
       let a = true
-      if (this.carlist[index].checked === true) {
+      if (this.carlist[index].checked) {
         this.Allprice += this.carlist[index].vip_price * this.carlist[index].num * 100
       } else {
         this.Allprice -= this.carlist[index].vip_price * this.carlist[index].num * 100
@@ -101,7 +101,7 @@ export default {
         }
       })
       this.checked = a
-      if (this.checked === true) {
+      if (this.checked) {
         // 全选时计算总额，循环数组相加
         for (let i = 0; i < priceArr.length; i++) {
           s += priceArr[i]
