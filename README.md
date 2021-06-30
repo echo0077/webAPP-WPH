@@ -1,6 +1,14 @@
-# vue-m
+# webAPP-wph（本项目页面仿照唯品会页面来写，但接口为自己写的nodejs，许多功能未实现）
 
 > A Vue.js project
+
+
+## 使用到的技术
+vueCli3脚手架+VUEX+nodeJS+Vant+Axios+router
+
+## 知识点
+
+
 
 ## Build Setup
 
